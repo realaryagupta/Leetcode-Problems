@@ -1,15 +1,19 @@
-class Solution:
-    def majorityElement(self, nums: List[int]) -> int:
-        num_count = {}
+class Solution(object):
+    def majorityElement(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        majority_element = nums[0]
+        counter = 0
 
-        # Count occurrences of each number
-        for num in nums:
-            if num in num_count:
-                num_count[num] += 1
+        for i in range(len(nums)):
+            if nums[i] == majority_element:
+                counter = counter + 1
             else:
-                num_count[num] = 1
+                counter = counter - 1
+                if counter == 0 :
+                    majority_element = nums[i]
+                    counter = counter + 1
         
-        # Check if any number occurs more than n / 2 times
-        for num in num_count:
-            if num_count[num] > len(nums) / 2:
-                return num
+        return majority_element
