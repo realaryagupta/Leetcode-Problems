@@ -1,19 +1,17 @@
-class Solution(object):
-    def majorityElement(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
-        majority_element = nums[0]
-        counter = 0
+class Solution:
+    def majorityElement(self, nums: List[int]) -> int:
 
-        for i in range(len(nums)):
-            if nums[i] == majority_element:
-                counter = counter + 1
-            else:
-                counter = counter - 1
-                if counter == 0 :
-                    majority_element = nums[i]
-                    counter = counter + 1
+        count = 0
+        temp = nums[0]
         
-        return majority_element
+        for i in nums:
+            if i == temp:
+                count = count + 1
+
+            else:
+                count = count - 1
+                if count == 0:
+                    temp = i
+                    count = 1
+
+        return temp
