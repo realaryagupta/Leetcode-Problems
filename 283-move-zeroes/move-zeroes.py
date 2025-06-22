@@ -3,15 +3,12 @@ class Solution:
         """
         Do not return anything, modify nums in-place instead.
         """
-        temp = []
+        zero_ptr = 0
 
-        for i in nums:
-            if i != 0:
-                temp.append(i)
+        for non_zero in range(len(nums)):
+            if nums[non_zero] != 0:
+                
+                # swap
+                nums[zero_ptr], nums[non_zero] = nums[non_zero], nums[zero_ptr]
 
-        for i in range(len(temp)):
-            nums[i] = temp[i]
-
-        
-        for i in range(len(temp), len(nums)):
-            nums[i] = 0
+                zero_ptr = zero_ptr + 1
