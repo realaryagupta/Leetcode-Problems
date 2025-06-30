@@ -19,4 +19,4 @@ class Solution(object):
             else:
                 right = mid - 1  
                 
-        return right  # Return the largest integer less than or equal to x
+        return right 
