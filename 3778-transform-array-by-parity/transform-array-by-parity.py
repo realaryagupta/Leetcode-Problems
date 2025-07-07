@@ -1,20 +1,15 @@
+from typing import List
+
 class Solution:
     def transformArray(self, nums: List[int]) -> List[int]:
-        
-        n = len(nums)
-        count_even = 0
+        arr = []
 
         for i in nums:
             if i % 2 == 0:
-                count_even = count_even + 1
-                
+                arr.append(0)
 
-        count_odd = n - count_even
-        total = count_even + count_odd
+            elif i % 2 != 0:
+                arr.append(1)
 
-        arr = [0] * count_even
-
-        # dont use append use extend instead
-        arr.extend([1] * count_odd)
-
+        arr.sort()
         return arr
