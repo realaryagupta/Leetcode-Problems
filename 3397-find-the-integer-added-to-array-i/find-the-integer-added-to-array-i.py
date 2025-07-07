@@ -1,12 +1,9 @@
-class Solution(object):
-    def addedInteger(self, nums1, nums2):
-        """
-        :type nums1: List[int]
-        :type nums2: List[int]
-        :rtype: int
-        """
-
+class Solution:
+    def addedInteger(self, nums1: List[int], nums2: List[int]) -> int:
+        
         nums1.sort()
         nums2.sort()
 
-        return nums2[0] - nums1[0]
+        x = nums2[-1] - nums1[-1]
+        
+        return x
